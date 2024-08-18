@@ -3,49 +3,25 @@
     <div class="container-fluid">
       <h1 class="section-header">{{ heading }}</h1>
 
-      <!-- start of filters  -->
-      <div class="row filters">
-        <ul class="list-inline mx-auto">
-          <li
-            v-for="item in filters"
-            :key="item.title"
-            class="list-inline-item filter"
-          >
-            <a
-              class="nav-item"
-              :class="item.filter === currentFilter ? 'active' : null"
-              :data-filter="item.filter"
-              @click="setFilter"
-              >{{ item.filter }}</a
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- end of filters  -->
-
       <div id="portfolio-container" class="row">
         <div
           data-aos="fade-right"
           data-aos-duration="1000"
-          v-for="(item, index) in filteredProjects"
+          v-for="(item, index) in projects"
           :key="index"
           class="col-sm-12 col-md-4 flex-col"
         >
           <div class="portfolio-item">
             <img :src="require(`@/assets/images/portfolio/${item.image}`)" />
             <div class="overlay">
-              <a :href="item.link" title="Live Demo" target="_blank">
+              <a :href="item.link" title="View project" target="_blank">
                 <div class="portfolio-item-content">
                   <h3>{{ item.title }}</h3>
                   <p>{{ item.description }}</p>
-                  <div v-if="item.source !== '' " class="link-icons">
-                    <a :href="item.source" title="Source Code" target="_blank">
-                      <i class="fas fa-code fa-2x"></i>
-                    </a>
-                  </div>
                 </div>
               </a>
             </div>
+            <h2>{{item.title}}</h2>
           </div>
         </div>
       </div>
