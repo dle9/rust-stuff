@@ -1,16 +1,20 @@
 /********************************
-*            IMPORTS            *
+*          IMPORT          *
 *********************************/ 
 // basic backend stuff
+use axum::body::{boxed, Body};
+use axum::http::{Response, StatusCode};
 use axum::{response::IntoResponse, routing::get, Router};
 use clap::Parser;
 use std::net::{IpAddr, Ipv6Addr, SocketAddr};
 use std::str::FromStr;
 
+ 
 // logging
-use tower::ServiceBuilder;
+use tower::{ServiceBuilder, ServiceExt};
+use tower_http::services::ServeDir;
 use tower_http::trace::TraceLayer;
-
+ 
 /********************************
 *          PRETTY CLI           *
 *********************************/ 
@@ -25,38 +29,41 @@ struct Opt {
     #[clap(short = 'p', long = "port", default_value = "5000")]
     port: u16,
     
-    // logging
+    /// logging
     #[clap(short = 'l', long = "log", default_value = "debug")]
     log_level: String,
-}
 
-/********************************
-*             MAIN              *
-*********************************/ 
+    /// set the directory where static files are to be found
+    #[clap(long = "static-dir", default_value = "./dist")]
+    static_dir: String,
+}
+ 
 #[tokio::main]
 async fn main() {
-    
-    /****************
-    *     SETUP     *
-    *****************/ 
-    // parse command line args
+    // handle cli args
     let opt = Opt::parse();
-
-    // handle logging (-l) arg
     if std::env::var("RUST_LOG").is_err() {
         std::env::set_var("RUST_LOG", format!("{},hyper=info,mio=info", opt.log_level))
-    }
+    }  
 
     // enable console logging
     tracing_subscriber::fmt::init();
 
-    /****************
-    *      APP      *
-    *****************/ 
-    // create the server
     let app = Router::new()
         .route("/", get(hello))
-        .layer(ServiceBuilder::new().layer(TraceLayer::new_for_http()));
+        .route("/api/hello", get(hello))
+        .fallback_service(get(|req| async move {
+            match ServeDir::new(opt.static_dir).oneshot(req).await {
+                Ok(res) => res.map(boxed),
+                Err(err) => Response::builder()
+                    .status(StatusCode::INTERNAL_SERVER_ERROR)
+                    .body(boxed(Body::from(format!("error: {err}"))))
+                    .expect("error response"),
+            }
+        }))
+         .layer(ServiceBuilder::new().layer(TraceLayer::new_for_http()));
+    
+    // create server socket
     let server_socket = SocketAddr::from((
         IpAddr::from_str(opt.addr.as_str()).unwrap_or(IpAddr::V6(Ipv6Addr::LOCALHOST)),
         opt.port,
