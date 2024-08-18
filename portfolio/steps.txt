@@ -1,0 +1,40 @@
+1) create ec2 instance
+- disable dynamic IP
+- allow http, https
+- create rsa pem key
+
+2) get static ip 
+"Elastic IPs" > Allocate new IP > Associate with an instance
+
+3) connect to instance
+ssh -i <key.pem> ubuntu@<elastic_ip>
+
+4) set up web service
+sudo apt update
+sudo apt install nginx -y
+sudo vim /etc/nginx/sites-available/dericle.com
+```
+server {
+    listen 80;
+    server_name dericle.com www.dericle.com;
+    root /var/www/dericle.com;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+4.5) deploy build files
+sudo mkdir -p /var/www/dericle.com
+sudo cp -r /path/to/your/build/files/* /var/www/dericle.com/
+
+5) enable the web server
+sudo ln -s /etc/nginx/sites-available/dericle.com /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+
+6) set up certs
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d dericle.com -d www.dericle.com
