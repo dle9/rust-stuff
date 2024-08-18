@@ -70,12 +70,12 @@ a {
 a:hover {
   cursor: pointer;
   text-decoration: none;
-  color: #ed2024;
+  color: #02bf96;
 }
 
 .section-header {
   text-decoration: underline;
-  text-decoration-color: #ed2024;
+  text-decoration-color: #02bf96;
   text-decoration-thickness: 0.375rem;
   padding-bottom: 2rem;
 }
@@ -89,7 +89,7 @@ p {
   font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 0.2rem;
-  color: #ed2024;
+  color: #02bf96;
   font-size: 1.2rem;
 }
 
@@ -143,11 +143,10 @@ section .list-group-item {
   margin: 0 auto;
 }
 .filters .active {
-  color: #ed2024;
+  color: #02bf96;
 }
 
 header {
-  display: flex;
   position: relative;
   height: 100%;
   width: 100%;
@@ -160,6 +159,9 @@ header {
 header a:link {
   color: #f0f0f0;
 }
+header .nav-link {
+  font-size: 1.2rem;
+}
 header .navbar-brand {
   font-size: 1.8rem;
   letter-spacing: -0.2rem;
@@ -168,13 +170,13 @@ header #FirstName {
   color: #f0f0f0;
 }
 header #LastName {
-  color: #ed2024;
+  color: #02bf96;
 }
 header #Logo {
   max-height: 4rem;
 }
 header .active-nav a {
-  color: #ed2024 !important;
+  color: #02bf96 !important;
 }
 header .banner {
   display: inline-block;
@@ -192,7 +194,7 @@ header .arrow-icon i {
   color: #f0f0f0;
 }
 header .arrow-icon i:hover {
-  color: #ed2024;
+  color: #02bf96;
 }
 
 .footer {
@@ -203,7 +205,7 @@ header .arrow-icon i:hover {
   color: #f0f0f0;
 }
 .footer a i:hover {
-  color: #ed2024;
+  color: #02bf96;
 }
 .footer #username {
   text-transform: lowercase;
@@ -212,7 +214,7 @@ header .arrow-icon i:hover {
   color: #f0f0f0;
 }
 .footer #username a:hover {
-  color: #ed2024;
+  color: #02bf96;
 }
 .footer .social-item i {
   font-size: 1.5rem;
@@ -301,7 +303,7 @@ header .arrow-icon i:hover {
 .btn-resume,
 .btn-submit,
 .btn-success {
-  background-color: #ed2024;
+  background-color: #02bf96;
   border-color: transparent;
   color: #f0f0f0;
 }
@@ -309,7 +311,7 @@ header .arrow-icon i:hover {
 .btn-resume:hover,
 .btn-submit:hover,
 .btn-success:hover {
-  background-color: #d31115;
+  background-color: #029776;
   color: #e3e3e3;
 }
 

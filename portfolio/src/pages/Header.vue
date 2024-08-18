@@ -2,7 +2,6 @@
   <header id="home" class="bg">
     <nav class="navbar navbar-expand-lg fixed-top dark-bg">
       <a class="navbar-brand" href="#">
-        <div v-if="main.logo"><img src="@/assets/images/logo.png" alt="logo" id="Logo"></div>
         <div v-if="!main.logo">
           <span id="FirstName">{{main.name.first}}</span> <span id="LastName">{{main.name.last}}</span>
         </div>
@@ -19,7 +18,7 @@
         <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span>
       </button>
       <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
-        <ul id="navbar-nav" class="navbar-nav ml-auto">
+        <ul id="navbar-nav" class="navbar-nav mx-auto">
           <li class="active-nav">
             <a class="nav-item nav-link" href="#home">Home</a>
           </li>

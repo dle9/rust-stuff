@@ -70,12 +70,8 @@
             "level": "85"
           },
           {
-            "name": "C++",
-            "level": "70"
-          },
-          {
-            "name": "Rust, Java",
-            "level": "60"
+            "name": "C++, Rust, Java",
+            "level": "65"
           },
           {
             "name": "HTML/CSS",
@@ -90,15 +86,19 @@
     ]
   },
 "portfolio": {
-  "defaultFilter": "Virtual Homelab",
+  "defaultFilter": "Malware Analysis",
   "projects": [
     {
+      "title": "Malware Analysis",
+      "description": "A write-up I did on a piece of malware called 'DarkTequila.' This was a bit more complicated than most malware I've dealt with, but I was able to discover some interesting things about it. Tools used: Ghidra, PEStudio, upx, Remnux, FlareVM, Wireshark, Procmon, x64dbg.",
+      "image": "malware.png",
+      "link": "https://docs.google.com/document/d/16t379RAujg53cBQ-gbBr9gMfZgKMCISOQAbjxpQoioo/edit?usp=sharing"
+    },
+    {
       "title": "Virtual Homelab",
-      "description": "S2E1",
-      "image": "meadowlake.png",
-      "link": "https://www.twoinchbrush.com/painting/meadow-lake",
-      "source": "https://www.twoinchbrush.com/painting/meadow-lake",
-      "filter": "Virtual Homelab"
+      "description": "This project is extremely useful for beginners, as it helps to clarify how information moves across devices which is a pillar of cybersecurity. Tools used: Virtualbox, OPNsense, Suricata, Wazuh, Samba, Amazon EC2, Apache.",
+      "image": "homelab1.png",
+      "link": "https://github.com/dle9/virtual-homelab"
     }
   ]
 },
