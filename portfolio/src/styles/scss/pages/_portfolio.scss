@@ -1,0 +1,56 @@
+// styling specific to the portfolio section
+#portfolio {
+  .container-fluid {
+    margin: $spacer-lg auto;
+  }
+
+  .portfolio-item {
+    box-shadow: 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      font-size: $font-size-md;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      padding: inherit;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      opacity: 0;
+      transition: 0.5s ease;
+      background-color: $dark-color;
+      text-align: center;
+
+      .portfolio-item-content {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        color: $light-color;
+        padding: $spacer;
+        margin: 0 auto;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+
+    &:hover {
+      .overlay {
+        opacity: 0.95;
+        cursor: pointer;
+      }
+    }
+  }
+}

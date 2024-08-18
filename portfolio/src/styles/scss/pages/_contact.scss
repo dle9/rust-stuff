@@ -1,0 +1,36 @@
+// styling specific to the #contact section
+#contact {
+  .social-item {
+    padding: 0 0.5rem;
+  }
+
+  ul {
+    margin-top: $spacer;
+  }
+
+  .contact-content {
+    padding: $spacer;
+  }
+}
+
+.btn,
+.btn-resume,
+.btn-submit,
+.btn-success {
+  background-color: $accent-color;
+  border-color: transparent;
+
+  color: $light-color;
+
+  &:hover {
+    background-color: darken($accent-color, 8%);
+    color: darken($light-color, 5%);
+  }
+}
+
+.contact-form {
+  margin-top: $spacer;
+  button {
+    width: 100%;
+  }
+}

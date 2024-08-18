@@ -1,0 +1,127 @@
+{
+  "main": {
+    "name": {
+        "first": "Deric",
+        "last": "Le"
+    },
+    "logo": true,
+    "titles": [
+        "Cybersecurity enthusiast.",
+        "Volleyball, rockclimbing, ping-pong enjoyer.",
+        "Fantasy bookworm."
+    ],
+    "headings": {
+      "about": "About",
+      "skills": "Skills",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    }
+  },
+    "about": {
+      "bio": "I was introduced to cybersecurity in college, and we have been inseparable ever since.",
+      "tagline": "",
+      "facts": [
+        {"name": "Hometown",
+        "value": "San Antonio, TX"
+        },
+        {"name": "College",
+        "value": "Texas A&M University"
+        }
+      ]
+    },
+    "skills": {
+    "defaultCategory": "Cybersecurity",
+    
+    "categories": [
+      {
+        "category": "Cybersecurity",
+        "subtitle": "",
+        "faClass": "fas fa-lock",        
+        "skillList":[
+          {
+            "name": "Security Operations",
+            "level": "85"
+          },
+          {
+            "name": "Reverse engineering, Malware analysis",
+            "level": "70"
+          },
+          {
+            "name": "Application Security",
+            "level": "60"
+          },
+          {
+            "name": "Forensics",
+            "level": "40"
+          },
+          {
+            "name": "Hardware",
+            "level": "30"
+          }
+        ]
+      },
+      {
+        "category": "Programming",
+        "subtitle": "",
+        "faClass": "fas fa-code",        
+        "skillList":[
+          {
+            "name": "Python, Javascript",
+            "level": "85"
+          },
+          {
+            "name": "C++",
+            "level": "70"
+          },
+          {
+            "name": "Rust, Java",
+            "level": "60"
+          },
+          {
+            "name": "HTML/CSS",
+            "level": "50"
+          },
+          {
+              "name": "Assembly, SQL",
+              "level": "30"
+          }
+        ]
+      }
+    ]
+  },
+"portfolio": {
+  "defaultFilter": "Virtual Homelab",
+  "projects": [
+    {
+      "title": "Virtual Homelab",
+      "description": "S2E1",
+      "image": "meadowlake.png",
+      "link": "https://www.twoinchbrush.com/painting/meadow-lake",
+      "source": "https://www.twoinchbrush.com/painting/meadow-lake",
+      "filter": "Virtual Homelab"
+    }
+  ]
+},
+    "contact":{
+      "formTitle": "Send Me A Message",
+      "formEndPoint": "",
+      "city": "San Antonio, TX",
+      "email": "dericle77@gmail.com",
+      "phone": "",
+      "resumeLink": "",
+      "form": true,
+      
+      "social": [
+          {
+            "name": "linkedin",
+            "url": "https://linkedin.com/in/dericle",
+            "faClass": "fab fa-linkedin"
+          },
+          {
+            "name": "github",
+            "url": "https://www.github.com/dle9",
+            "faClass": "fab fa-github"
+          }
+        ]
+      }
+}

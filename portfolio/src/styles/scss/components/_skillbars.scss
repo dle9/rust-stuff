@@ -1,0 +1,91 @@
+.skillbars {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill {
+  margin: 0.8rem 0;
+  position: relative;
+  width: 80%;
+}
+
+.skill-name {
+  font-size: 0.8em;
+  letter-spacing: 0.145em;
+  text-transform: uppercase;
+}
+
+.outer-bar,
+.inner-bar {
+  height: 0.75em;
+}
+
+.outer-bar {
+  margin-top: 1em;
+  background: #333;
+}
+
+.inner-bar {
+  animation: fillBar 1s forwards;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+}
+
+[class*="level--"] {
+  background: $level-color-1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    $level-color-2,
+    $level-color-1
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $level-color-2, $level-color-1);
+  // width: 100%;
+}
+
+[class$="100"] {
+  width: 100%;
+}
+
+[class$="90"] {
+  width: 90%;
+}
+
+[class$="80"] {
+  width: 80%;
+}
+
+[class$="70"] {
+  width: 70%;
+}
+
+[class$="60"] {
+  width: 60%;
+}
+
+[class$="50"] {
+  width: 50%;
+}
+
+[class$="40"] {
+  width: 40%;
+}
+
+[class$="30"] {
+  width: 30%;
+}
+
+[class$="20"] {
+  width: 20%;
+}
+[class$="10"] {
+  width: 10%;
+}
+
+@keyframes fillBar {
+  to {
+    transform: scaleX(1);
+  }
+}

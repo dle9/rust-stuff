@@ -1,0 +1,35 @@
+.footer {
+  background-color: $dark-bg;
+  padding: $spacer-sm;
+
+  a {
+    i {
+      &:link {
+        color: $light-color;
+      }
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  #username {
+    text-transform: lowercase;
+
+    a {
+      &:link {
+        color: $light-color;
+      }
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .social-item {
+    i {
+      font-size: $social-size;
+      padding: 0 $spacer;
+    }
+  }
+}
