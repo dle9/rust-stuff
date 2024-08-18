@@ -10,7 +10,6 @@
           style="margin: 0 auto;"
         >
           <div class="contact-content">
-            <h2>Connect with Me</h2>
             <div class="contact-text">{{ contact.text }}</div>
 
             <div class="contact-info">
@@ -68,57 +67,6 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div
-          class="col-sm-12 col-md-6 flex-col"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          v-if="contact.form"
-
-        >
-          <h2 v-if="contact.formTitle !==''">{{contact.formTitle}}</h2>
-
-<!-- start of contact form  -->
-
-<div class="container contact-form">
-  <form :action="contact.formEndPoint" method="POST" target="_blank">
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text bg-white">
-            <i class="fa fa-user"></i>&nbsp;
-          </span>
-        </div>
-        <input name="name" type="name" placeholder="Name" class="form-control border-left-0" required>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text bg-white">
-            <i class="fa fa-envelope"></i>
-          </span>
-        </div>
-        <input name="email" type="email" placeholder="Email" class="form-control border-left-0" required>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <textarea class="form-control" id="message" rows="5" placeholder="Message" required></textarea>
-    </div>
-
-    <button type="submit" class="btn">
-      <i class="fa fa-paper-plane"></i> 
-      Send
-    </button>
-  </form>
-</div>
-
-
-<!-- end of contact form  -->
-
-
         </div>
       </div>
     </div>
