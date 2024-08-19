@@ -67,11 +67,11 @@
         "skillList":[
           {
             "name": "Python, Javascript",
-            "level": "85"
+            "level": "95"
           },
           {
             "name": "C++, Rust, Java",
-            "level": "65"
+            "level": "70"
           },
           {
             "name": "HTML/CSS",
@@ -99,6 +99,12 @@
       "description": "This project is extremely useful for beginners, as it helps to clarify how information moves across devices which is a pillar of cybersecurity. Tools used: Virtualbox, OPNsense, Suricata, Wazuh, Samba, Amazon EC2, Apache.",
       "image": "homelab1.png",
       "link": "https://github.com/dle9/virtual-homelab"
+    },
+    {
+      "title": "Rust C2 Server",
+      "description": "Work in progress. Tools used: Rust",
+      "image": "c2.png",
+      "link": "https://github.com/dle9/rust-stuff/tree/main/c2server"
     }
   ]
 },
