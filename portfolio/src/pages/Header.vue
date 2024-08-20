@@ -2,7 +2,7 @@
   <header id="home" class="bg">
     <nav class="navbar navbar-expand-lg fixed-top dark-bg">
       <a class="navbar-brand" href="#">
-        <div v-if="!main.logo">
+        <div>
           <span id="FirstName">{{firstname}}</span> <span id="LastName">{{lastname}}</span>
         </div>
         </a>
