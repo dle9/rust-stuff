@@ -6,9 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "sass":"sass --watch src/styles/scss/main.scss:src/styles/css/lol.css"
+    "sass": "sass --watch src/styles/scss/main.scss:src/styles/css/lol.css"
   },
   "dependencies": {
+    "@vue/cli": "^5.0.8",
+    "@vue/compiler-sfc": "^3.4.38",
     "core-js": "^3.8.3",
     "jquery": "^3.7.1",
     "sass": "^1.77.8",
