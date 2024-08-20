@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg fixed-top dark-bg">
       <a class="navbar-brand" href="#">
         <div v-if="!main.logo">
-          <span id="FirstName">{{main.name.first}}</span> <span id="LastName">{{main.name.last}}</span>
+          <span id="FirstName">{{firstname}}</span> <span id="LastName">{{lastname}}</span>
         </div>
         </a>
       <button
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import {invoke} from '@tauri-apps/api'
 import Arrow from "@/components/Arrow.vue";
 import Banner from "@/components/Banner.vue";
 import data from "@/assets/data.json";
@@ -48,9 +49,20 @@ export default {
   props: {},
   data() {
     return {
-      main: data.main,
+      firstname: data.main.name.first,
+      lastname: data.main.name.last
     };
   },
+  async created() {
+      try {
+          const res1 = await invoke('greet',{name:this.firstname});
+          this.firstname=res1;
+          const res2 = await invoke('greet',{name:this.lastname});
+          this.lastname=res2;
+      } catch (e) {
+          console.error("{}",e);
+      }
+  }
 };
 </script>
 

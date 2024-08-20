@@ -9,6 +9,7 @@
     "sass": "sass --watch src/styles/scss/main.scss:src/styles/css/lol.css"
   },
   "dependencies": {
+    "@tauri-apps/api": "^1.6.0",
     "@vue/cli": "^5.0.8",
     "@vue/compiler-sfc": "^3.4.38",
     "core-js": "^3.8.3",
