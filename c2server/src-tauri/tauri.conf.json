@@ -1,4 +1,5 @@
 {
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
@@ -6,7 +7,7 @@
     "distDir": "../build"
   },
   "package": {
-    "productName": "tauri_vite_site",
+    "productName": "c2server",
     "version": "0.1.0"
   },
   "tauri": {
@@ -57,7 +58,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "tauri_vite_site",
+        "title": "c2server",
         "width": 800
       }
     ]
